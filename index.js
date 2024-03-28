@@ -48,66 +48,7 @@ app.use(require('./src/middlewares/queryHandler'))
 
 /* ------------------------------------------------------- */
 
-const nodemailer = require('nodemailer')
 
-// nodemailer.createTestAccount().then(data => console.log(data))
-
-// {
-//     user: 'rr7p6vp6rbbsvrhd@ethereal.email',
-//     pass: 'DchQBQPUQ7GBf9wCGB',
-//     smtp: { host: 'smtp.ethereal.email', port: 587, secure: false },
-//     imap: { host: 'imap.ethereal.email', port: 993, secure: true },
-//     pop3: { host: 'pop3.ethereal.email', port: 995, secure: true },
-//     web: 'https://ethereal.email'
-//   }
-
-
-// //? YandexMail (yandex):
-// const transporter = nodemailer.createTransport({
-//     service: 'Yandex',
-//     auth: {
-//         user: 'username@yandex.com',
-//         pass: 'password' // your emailPassword
-//     }
-// })
-
-// const transporter = nodemailer.createTransport({
-//     // SMTP
-
-//     // host:'smtp.ethereal.email',
-//     // post:587,
-//     // secure:false, // ssl tls
-//     service:'gmail',
-//     auth:{
-//         user:'niluferk038@gmail.com',
-//         pass:'iknd bxjm azpt jjrz'
-//     }
-// })
-// console.log(transporter)
-
-transporter.sendMail({
-    // from:'niluferk038@gmail.com',
-    to:'niluferk038@gmail.com',
-    subject:'Yo wassup',
-    text:'stay low',
-    html:'<b>just dont overthink about wrong topics</b>'
-
-},(error,success)=> console.log(success,error))
-
-// transporter.sendMail({
-//     from:'rr7p6vp6rbbsvrhd@ethereal.email',
-//     to:'niluferk038@gmail.com',
-//     subject:'Yo wassup',
-//     text:'stay low',
-//     html:'<b>just dont overthink about wrong topics</b>'
-
-// },(error,success) =>{
-//     if(error){
-//         console.log(error,'error')
-//     }else{
-//         console.log(success,'success')
-//     }
-// })
 
 // Routes:
 

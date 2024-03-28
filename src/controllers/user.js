@@ -6,6 +6,8 @@
 
 const User = require('../models/user')
 
+const sendMail = require('../helpers/sendMail')
+
 module.exports = {
 
     list: async (req, res) => {
@@ -46,6 +48,15 @@ module.exports = {
             error: false,
             data
         })
+        sendMail(
+            data.email,  // to:
+            'Welcome to pizzaApi services.',  // subject
+            // message
+            `
+            <h1>Welcome ${data.username}</h1>
+            <p>Welcome to our API system.</p>
+            `
+        )
     },
 
     read: async (req, res) => {
