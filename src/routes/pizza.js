@@ -9,11 +9,20 @@ const router = require('express').Router()
 const pizza = require('../controllers/pizza')
 const { isAdmin } = require('../middlewares/permissions')
 
+const multer = require('multer')
+const upload = multer({
+    // dest: 'uploads/', // this saves your file into a directory called "uploads"
+    storage: multer.diskStorage({
+        destination: './uploads'
+})
+})
+
 // URL: /pizzas
 
 router.route('/')
     .get(pizza.list)
     .post(isAdmin, pizza.create)
+    .post(isAdmin, upload.array('fileName'), pizza.create) // recommended
 
 router.route('/:id')
     .get(pizza.read)
