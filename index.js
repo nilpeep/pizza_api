@@ -47,6 +47,20 @@ app.use(require('./src/middlewares/authentication'))
 app.use(require('./src/middlewares/queryHandler'))
 
 /* ------------------------------------------------------- */
+
+const nodemailer = require('nodemailer')
+
+// nodemailer.createTestAccount().then(data => console.log(data))
+
+// {
+//     user: 'rr7p6vp6rbbsvrhd@ethereal.email',
+//     pass: 'DchQBQPUQ7GBf9wCGB',
+//     smtp: { host: 'smtp.ethereal.email', port: 587, secure: false },
+//     imap: { host: 'imap.ethereal.email', port: 993, secure: true },
+//     pop3: { host: 'pop3.ethereal.email', port: 995, secure: true },
+//     web: 'https://ethereal.email'
+//   }
+
 // Routes:
 
 // routes/index.js:
@@ -72,7 +86,7 @@ app.all('/', (req, res) => {
 app.use(require('./src/middlewares/errorHandler'))
 
 // RUN SERVER:
-app.listen(PORT, () => console.log('http://127.0.0.1:' + PORT))
+app.listen(PORT, () => console.log('server running at '+'http://127.0.0.1:' + PORT))
 
 /* ------------------------------------------------------- */
 // Syncronization (must be in commentLine):
