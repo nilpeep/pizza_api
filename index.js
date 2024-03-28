@@ -8,6 +8,7 @@
     $ npm i express dotenv mongoose express-async-errors
     $ npm i morgan swagger-autogen swagger-ui-express redoc-express
     $ mkdir logs
+    $ npm i jsonwebtoken
     $ nodemon
 */
 const express = require('express')
@@ -40,7 +41,7 @@ app.use(express.json())
 app.use(require('./src/middlewares/logger'))
 
 // Auhentication:
-// app.use(require('./src/middlewares/authentication'))
+app.use(require('./src/middlewares/authentication'))
 
 // findSearchSortPage / res.getModelList:
 app.use(require('./src/middlewares/queryHandler'))
